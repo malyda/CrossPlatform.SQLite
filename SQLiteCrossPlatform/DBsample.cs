@@ -18,12 +18,21 @@ namespace SQLiteCrossPlatform
         {
             get
             {
-                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TodoSQLite.db3"); 
+                return Path.Combine(Environment.GetFolderPath(
+                    Environment.SpecialFolder.LocalApplicationData,
+                    Environment.SpecialFolderOption.Create)
+                    ,"TodoSQLite.db3"); 
             }
         }
         public async Task<List<TodoItem>> Test()
         {
-            DatabaseAccess todoItemDatabase = new DatabaseAccess(DbPath);
+            List<String> x = new List<string>();
+            x.Add("a");
+
+            var l = Newtonsoft.Json.JsonConvert.SerializeObject(x);
+
+
+           DatabaseAccess todoItemDatabase = new DatabaseAccess(DbPath);
 
             // Create object to insert to database
             TodoItem item = new TodoItem();

@@ -18,7 +18,10 @@ namespace SQLiteCrossPlatform
         {
             get
             {
-                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TodoSQLite.db3"); 
+                return Path.Combine(Environment.GetFolderPath(
+                    Environment.SpecialFolder.LocalApplicationData,
+                    Environment.SpecialFolderOption.Create)
+                    ,"TodoSQLite.db3"); 
             }
         }
         public async Task<List<TodoItem>> Test()

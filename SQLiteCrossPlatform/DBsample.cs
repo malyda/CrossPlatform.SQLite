@@ -26,13 +26,7 @@ namespace SQLiteCrossPlatform
         }
         public async Task<List<TodoItem>> Test()
         {
-            List<String> x = new List<string>();
-            x.Add("a");
-
-            var l = Newtonsoft.Json.JsonConvert.SerializeObject(x);
-
-
-           DatabaseAccess todoItemDatabase = new DatabaseAccess(DbPath);
+            DatabaseAccess todoItemDatabase = new DatabaseAccess(DbPath);
 
             // Create object to insert to database
             TodoItem item = new TodoItem();
